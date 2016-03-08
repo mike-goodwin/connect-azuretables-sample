@@ -1,13 +1,11 @@
 {
-  "name": "OWASP-Threat-Dragon",
+  "name": "connect-azuretables-example",
   "version": "0.0.3",
   "private": true,
   "scripts": {
-    "start": "node server.js",
-    "test": "./node_modules/.bin/karma start --single-run --browsers Firefox,PhantomJS",
-    "codecov": "cat './coverage/Firefox 31.0.0 (Linux 0.0.0)/lcov.info' | codecov"
+    "start": "node server.js"
   },
-  "description": "OWASP Threat Dragon - a free, open source threat modelling tool",
+  "description": "An example application for connect-azuretables",
   "author": {
     "name": "mike.goodwin",
     "email": "mike.goodwin@owasp.org"
