@@ -1,0 +1,18 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+block body
+	.container
+		.jumbotron
+			h1 connect-auretables-sample
+			p
+				| This is a sample application for #[a(href='https://www.npmjs.com/package/connect-azuretables', target='_blank') connect-azuretables], 
+				| a session store for #[a(href='https://www.npmjs.com/package/express-session', target='_blank') express-session] based 
+				| on #[a(href='https://azure.microsoft.com/en-gb/services/storage/tables/', target='_blank') Azure Table Storage]. Congratulations! 
+				| You successfully logged in as "#{username}".
+		.container
+			form(role='form', action='logout', method='post')
+				.form-group.col-sm-12
+					.col-sm-2.col-sm-offset-5
+						button.btn.btn-primary.btn-lg.btn-block(type='submit') Logout
+		hr
+		footer
+			p © Mike Goodwin 2016, licensed under the Apache v2.0 license

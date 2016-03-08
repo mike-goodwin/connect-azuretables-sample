@@ -3,11 +3,11 @@ var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
 var AzureTablesStore = require('connect-azuretables')(session);
 
 var app = express();
 app.set('view engine', 'jade');
-//app.use(express.static(path.join(__dirname, 'public')));
 
 //sessions
 app.use(session({ 
@@ -16,6 +16,20 @@ app.use(session({
     resave: false,
     saveUninitialized: false
     }));
+    
+app.use(passport.initialize());
+
+passport.use(new LocalStrategy(function(username, password, done) {
+      return done(null, {name: username});
+    }));
+    
+passport.serializeUser(function(user, done) {
+  done(null, user);
+});
+
+passport.deserializeUser(function(user, done) {
+  done(null, user);
+});
     
 app.use(passport.initialize());
 

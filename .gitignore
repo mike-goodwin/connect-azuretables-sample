@@ -193,15 +193,7 @@ ModelManifest.xml
 
 # custom
 .vscode/
-bower-packages/
-td/[Oo]bj/
-#td/[Bb]in/
-td/node_modules/
-threatdragon.tests/node_modules/
-threatdragon.tests/[Oo]bj/
-*/.ntvs_analysis.dat
-td/.ntvs_analysis.dat
-threatdragon.tests/.ntvs_analysis.dat
+node_modules/
 coverage/
 typings/
 

@@ -1,7 +1,4 @@
 extends ../node_modules/jade-bootstrap/_bootstrap
-append styles
-	// Custom styles for this template
-	link(href='../node_modules/jade-bootstrap/css/jumbotron.css', rel='stylesheet')
 block body
 	.container
 		.jumbotron
@@ -10,14 +7,16 @@ block body
 				| This is a sample application for #[a(href='https://www.npmjs.com/package/connect-azuretables', target='_blank') connect-azuretables], 
 				| a session store for #[a(href='https://www.npmjs.com/package/express-session', target='_blank') express-session] based 
 				| on #[a(href='https://azure.microsoft.com/en-gb/services/storage/tables/', target='_blank') Azure Table Storage]. Type 
-				| your username in the box below and click the login button to create a session.
+				| a random username in the box below and click the login button to create a session.
 		.container
-			form(role='form')
+			form(role='form', action='login', method='post')
 				.form-group.col-sm-12
-					.col-sm-10
-						input.form-control.input-lg(type='text', placeholder='username - anything will do')
+					.col-sm-5
+						input.form-control.input-lg(type='text', name='username', placeholder='username - anything will do')
+					.col-sm-5
+						input.form-control.input-lg(type='text', name='password', placeholder='password - anything will do')
 					.col-sm-2
-						button.btn.btn-primary.btn-lg(type='button') Login
+						button.btn.btn-primary.btn-lg(type='submit') Login
 		hr
 		footer
 			p © Mike Goodwin 2016, licensed under the Apache v2.0 license
