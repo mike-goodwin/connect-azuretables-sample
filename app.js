@@ -4,14 +4,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
-var AzureTablesStore = require('connect-azuretables')(session);
+var AzureTablesStoreFactory = require('connect-azuretables')(session);
 
 var app = express();
 app.set('view engine', 'jade');
 
 //sessions
 app.use(session({ 
-    store: new AzureTablesStore(),
+    store: AzureTablesStoreFactory.create(),
     secret: process.env.SESSION_SIGNING_KEY,
     resave: false,
     saveUninitialized: false
