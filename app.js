@@ -10,12 +10,12 @@ var app = express();
 app.set('view engine', 'jade');
 
 //sessions
-app.use(session({ 
-    store: AzureTablesStoreFactory.create(),
+app.use(session({
+    store: AzureTablesStoreFactory.create({logger: console.log}),
     secret: process.env.SESSION_SIGNING_KEY,
     resave: false,
     saveUninitialized: false
-    }));
+}));
     
 app.use(passport.initialize());
 
