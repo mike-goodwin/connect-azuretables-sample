@@ -38,4 +38,10 @@ app.use(cookieParser());
 var index = require('./routes/index');
 app.use('/', index);
 
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.clearCookie('connect.sid');
+    res.render('error', {});
+});
+
 module.exports = app;

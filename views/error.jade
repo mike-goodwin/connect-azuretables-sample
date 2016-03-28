@@ -1,0 +1,15 @@
+extends ../node_modules/jade-bootstrap/_bootstrap
+block body
+	.container
+		.jumbotron
+			h1 connect-azuretables-sample
+			p
+				| Oops! Something went wrong - most likely your session expired and was automagically cleaned up. Sorry!
+		.container
+			form(role='form', action='/', method='get')
+				.form-group.col-sm-12
+					.col-sm-2.col-sm-offset-5
+						a.btn.btn-primary.btn-lg.btn-block(href='/', role='button') Try Again
+		hr
+		footer
+			p © Mike Goodwin 2016, licensed under the Apache v2.0 license

@@ -11,7 +11,7 @@ router.get('/', function (req, res) {
 router.post('/login', passport.authenticate('local', { failureRedirect: '/' }), renderWelcome);
   
 //success
-router.get('/welcome', require('connect-ensure-login').ensureLoggedIn('/login'), renderWelcome);
+router.get('/welcome', require('connect-ensure-login').ensureLoggedIn('/'), renderWelcome);
   
 //render welcome
 function renderWelcome(req, res) {
