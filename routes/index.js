@@ -10,9 +10,6 @@ router.get('/', function (req, res) {
 //login
 router.post('/login', passport.authenticate('local', { failureRedirect: '/' }), renderWelcome);
   
-//success
-router.get('/welcome', require('connect-ensure-login').ensureLoggedIn('/'), renderWelcome);
-  
 //render welcome
 function renderWelcome(req, res) {
     res.render('welcome', {username: req.user.name});
