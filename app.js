@@ -10,10 +10,12 @@ app.set('view engine', 'jade');
 
 //sessions
 app.use(session({
-    store: AzureTablesStoreFactory.create({ logger: console.log, errorLogger: console.log, sessionTimeOut: 15 }),
+    store: AzureTablesStoreFactory.create({ logger: console.log, errorLogger: console.log }),
     secret: process.env.SESSION_SIGNING_KEY,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    rolling: true,
+    cookie: {maxAge: 600000}
 }));
 
 app.use(passport.initialize());
