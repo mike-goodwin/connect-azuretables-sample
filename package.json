@@ -3,7 +3,9 @@
   "version": "1.0.19",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "description": "An example application for connect-azuretables",
   "author": {
@@ -22,9 +24,11 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "request": "^2.74.0",
-    "stylus": "0.54.5"
+    "stylus": "0.54.5",
+    "snyk": "^1.53.0"
   },
   "devDependencies": {
     "debug": "^3.1.0"
-  }
+  },
+  "snyk": true
 }
