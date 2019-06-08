@@ -23,9 +23,11 @@ function(req, res) {
     req.logOut();
     //logout does not seem to do much/anything so do it by hand
     res.clearCookie('connect.sid');
-    req.session.destroy(function() {
-        res.render('index'); 
-        });
+    // req.session.destroy(function() {
+    //     res.render('index'); 
+    //     });
+    req.session.destroy();
+    res.render('index'); 
     }); 
   
 module.exports = router;
