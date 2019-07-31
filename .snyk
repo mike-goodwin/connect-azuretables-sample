@@ -1,5 +1,5 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.8.0
+version: v1.12.0
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
@@ -9,3 +9,12 @@ patch:
   'npm:uglify-js:20150824':
     - jade > transformers > uglify-js:
         patched: '2017-12-06T08:06:28.713Z'
+  'npm:hoek:20180212':
+    - connect-azuretables > azure-storage > request > hawk > hoek:
+        patched: '2018-06-20T03:42:31.784Z'
+    - connect-azuretables > azure-storage > request > hawk > boom > hoek:
+        patched: '2018-06-20T03:42:31.784Z'
+    - connect-azuretables > azure-storage > request > hawk > sntp > hoek:
+        patched: '2018-06-20T03:42:31.784Z'
+    - connect-azuretables > azure-storage > request > hawk > cryptiles > boom > hoek:
+        patched: '2018-06-20T03:42:31.784Z'
