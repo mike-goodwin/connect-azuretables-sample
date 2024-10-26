@@ -24,7 +24,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "request": "^2.74.0",
-    "stylus": "0.54.5",
+    "stylus": "0.64.0",
     "snyk": "^1.53.0"
   },
   "devDependencies": {
